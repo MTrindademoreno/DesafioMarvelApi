@@ -1,16 +1,14 @@
 package com.example.marvel.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.marvel.FullPath
-import com.example.marvel.R
-import com.example.marvel.databinding.FragmentBlankBinding
 import com.example.marvel.databinding.FragmentExpandBinding
 import com.example.marvel.viewModel.DetailViewModel
 
@@ -23,7 +21,7 @@ class ExpandFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentExpandBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,7 +39,7 @@ class ExpandFragment : Fragment() {
                 Glide.with(it).load(urlExpandImg).into(binding.imgExpand)
             })
             binding.finishIcon.setOnClickListener {
-                viewModel.backFragment(BlankFragment())
+                viewModel.backFragment(DetailFragment())
             }
 
         }

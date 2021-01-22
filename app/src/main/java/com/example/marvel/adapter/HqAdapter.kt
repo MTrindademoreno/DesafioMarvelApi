@@ -1,5 +1,6 @@
 package com.example.marvel.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,14 +30,16 @@ class HqAdapter(
 
     class ViewHolder(private val binding: ItemHqMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(hq: Result, itemClick: (Int) -> Unit) = with(binding) {
 
             titleHqMain.text =
-                hq.id.toString() //"#${this@ViewHolder.adapterPosition.toString()}"
+                "#${this@ViewHolder.adapterPosition + 1}"
             val img = hq.thumbnail.path + "/portrait_medium." + hq.thumbnail.extension
             Glide.with(itemView.context).load(img).into(imgHqMain)
             itemView.setOnClickListener {
                 itemClick(this@ViewHolder.adapterPosition)
+
             }
 
 

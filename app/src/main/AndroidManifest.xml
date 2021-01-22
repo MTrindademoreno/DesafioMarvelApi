@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Marvel">
-        <activity android:name=".view.RegisterActivity"></activity>
+        <activity
+            android:name=".view.RegisterActivity"
+            android:parentActivityName=".view.MainActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.SplashActivity">
             <intent-filter>
@@ -20,10 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity2" />
-        <activity android:name=".view.ExpandDetailActivity" />
-        <activity android:name=".view.DetailActivity" />
-        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.ComicActivity" />
+        <activity
+            android:name=".view.MainActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
