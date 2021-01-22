@@ -14,9 +14,12 @@
         android:layout_height="match_parent"
         />
     <ImageView
+        android:scaleType="fitStart"
         android:src="@drawable/marvel_logo"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
+        android:layout_marginStart="240dp"
         android:layout_height="121dp"
+        app:layout_constraintStart_toStartOf="@id/backgroundSplash"
         app:layout_constraintTop_toTopOf="@id/backgroundSplash"
         app:layout_constraintEnd_toEndOf="@id/backgroundSplash"/>
 

@@ -1,17 +1,14 @@
 package com.example.marvel.view
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.transition.Slide
 import android.view.View
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.marvel.adapter.HqAdapter
 import com.example.marvel.databinding.ActivityMainBinding
+import com.example.marvel.utils.Constants.Comic.COMIC
 import com.example.marvel.viewModel.HqViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -22,12 +19,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(window) {
-            requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
-            exitTransition = Slide()
-
-
-        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -35,16 +26,16 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.getHq()
         binding.rvHqMain.visibility = View.GONE
-        binding.progressBar.visibility = View.VISIBLE
-        viewModel.hqLiveData.observe(this, Observer {
+        binding.progressCircular.visibility = View.VISIBLE
+        viewModel.hqLiveData.observe(this, {
             binding.rvHqMain.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.GONE
+            binding.progressCircular.visibility = View.GONE
             binding.rvHqMain.apply {
                 layoutManager = GridLayoutManager(this@MainActivity, 3)
                 adapter = HqAdapter(it.data.results) { position ->
                     val comic = it.data.results[position]
-                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
-                    intent.putExtra("comic", comic)
+                    val intent = Intent(this@MainActivity, ComicActivity::class.java)
+                    intent.putExtra(COMIC, comic)
                     startActivity(intent)
                 }
             }

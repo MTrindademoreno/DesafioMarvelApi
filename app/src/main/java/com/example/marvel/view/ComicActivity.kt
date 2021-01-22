@@ -7,18 +7,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.marvel.R
 import com.example.marvel.model.Result
+import com.example.marvel.utils.Constants.Comic.COMIC
 import com.example.marvel.viewModel.DetailViewModel
 
-class MainActivity2 : AppCompatActivity() {
+class ComicActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_comic)
         supportActionBar?.hide()
         viewModel= ViewModelProvider(this).get(DetailViewModel::class.java)
 
 
-        val comic = intent.getParcelableExtra<Result>("comic")
+        val comic = intent.getParcelableExtra<Result>(COMIC)
 
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
         comic?.id?.let { viewModel.getComic(it) }
@@ -34,7 +35,7 @@ class MainActivity2 : AppCompatActivity() {
             loadFragment(it)
         })
 
-      loadFragment(BlankFragment())
+      loadFragment(DetailFragment())
     }
 
     private fun loadFragment(fragment:Fragment) {

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "245814298790",
+    "project_id": "marvel-ec333",
+    "storage_bucket": "marvel-ec333.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245814298790:android:20350da04f078e33220c67",
+        "android_client_info": {
+          "package_name": "com.example.marvel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245814298790-f4t62oe2hnvqa8pjrnnu0r720629fugi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marvel",
+            "certificate_hash": "102a7263da36bc029e0163cb4c687723729cbf10"
+          }
+        },
+        {
+          "client_id": "245814298790-9e4503oa4r1m0k9ru92sjsjpr7ivak3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh93B9VphRJc3qF1q4s4FbObS2835D8Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245814298790-9e4503oa4r1m0k9ru92sjsjpr7ivak3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

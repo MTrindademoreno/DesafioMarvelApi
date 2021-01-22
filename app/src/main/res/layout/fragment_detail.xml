@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DetailActivity">
+    tools:context=".view.DetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imgDetail"
@@ -20,12 +20,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-
+            android:padding="4dp"
             android:id="@+id/imgComicDetail"
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="120dp"
+            android:background="@drawable/border_image_comic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -94,5 +95,6 @@
             app:layout_constraintStart_toStartOf="@id/tvDescription"
             app:layout_constraintTop_toBottomOf="@id/tvPrice" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

@@ -1,7 +1,8 @@
-package com.example.marvel
+package com.example.marvel.utils
 
 import android.content.Context
 import android.widget.EditText
+import com.example.marvel.R
 import com.google.android.material.textfield.TextInputLayout
 
 class Validation(val context: Context) {
